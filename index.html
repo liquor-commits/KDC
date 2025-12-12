@@ -14,6 +14,42 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    /* Dark mode */
+body.dark-mode {
+  background: #0f1724;
+  color: #e0e7ff;
+}
+
+body.dark-mode a {
+  color: #a5b4fc;
+}
+
+body.dark-mode .card, 
+body.dark-mode section.site-section,
+body.dark-mode #popup-box {
+  background: #1e293b;
+  color: #e0e7ff;
+  box-shadow: 0 10px 36px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .btn-primary {
+  background: linear-gradient(90deg,#3b82f6,#9333ea);
+}
+
+body.dark-mode .btn-ghost {
+  border-color: rgba(165,180,252,0.3);
+  color: #a5b4fc;
+}
+
+body.dark-mode .topnav {
+  backdrop-filter: blur(6px);
+  background: rgba(15,23,36,0.7);
+}
+
+body.dark-mode .map-wrap iframe {
+  filter: invert(90%) contrast(85%);
+}
+
     #popup {
   position: fixed;
   top: 0;
@@ -323,6 +359,17 @@
   function closePopup() {
     document.getElementById("popup").style.display = "none";
   }
+    const toggle = document.getElementById('darkModeToggle');
+toggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  // Toggle button text
+  if(document.body.classList.contains('dark-mode')){
+    toggle.textContent = '☀️ Light Mode';
+  } else {
+    toggle.textContent = '🌙 Dark Mode';
+  }
+});
+
 </script>
 
 <body>
@@ -345,6 +392,10 @@
   </div>
 
   <!-- TOP NAV (slim) -->
+  <button id="darkModeToggle" style="margin-left:12px;padding:6px 10px;border-radius:8px;border:none;cursor:pointer;">
+  🌙 Dark Mode
+</button>
+
   <div class="topnav" role="navigation" aria-label="Primary navigation">
     <a href="#home">Home</a>
     <a href="#about">About</a>
@@ -353,6 +404,17 @@
     <a href="#hours">Opening Hours</a>
     <a href="#contact">Contact</a>
     <a href="#appointment">Book</a>
+    <div class="topnav" role="navigation" aria-label="Primary navigation">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#doctors">Our Doctors</a>
+  <a href="#treatments">Treatments</a>
+  <a href="#hours">Opening Hours</a>
+  <a href="#contact">Contact</a>
+  <a href="#appointment">Book</a>
+  <button id="darkModeToggle">🌙 Dark Mode</button>
+</div>
+
   </div>
 
   <!-- HERO -->
