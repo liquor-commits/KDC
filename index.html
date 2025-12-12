@@ -392,15 +392,7 @@ body.dark-mode .map-wrap iframe {
   function closePopup() {
     document.getElementById("popup").style.display = "none";
   }
-    const toggle = document.getElementById('darkModeToggle');
-toggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  // Toggle button text
-  if(document.body.classList.contains('dark-mode')){
-    toggle.textContent = '☀️ Light Mode';
-  } else {
-    toggle.textContent = '🌙 Dark Mode';
-  }
+
 });
 
 </script>
@@ -425,10 +417,6 @@ toggle.addEventListener('click', () => {
   </div>
 
   <!-- TOP NAV (slim) -->
-  <button id="darkModeToggle" style="margin-left:12px;padding:6px 10px;border-radius:8px;border:none;cursor:pointer;">
-  🌙 Dark Mode
-</button>
-
 <div class="topnav" role="navigation" aria-label="Primary navigation">
   <a href="#home">Home</a>
   <a href="#about">About</a>
