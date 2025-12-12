@@ -14,6 +14,27 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    #popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#popup-box {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
     :root{
       --soft-blue: #e9f6fb;
       --accent-blue: #3fa9f5;
@@ -235,7 +256,25 @@
     }
   </style>
 </head>
+  <script>
+  window.onload = function() {
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+</script>
+
 <body>
+  <div id="popup" style="display:none;">
+  <div id="popup-box">
+    <h2>Welcome!</h2>
+    <p>This is a custom popup message on your website.</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+
   <!-- PRELOADER -->
   <div id="preloader" aria-hidden="true">
     <div class="preloader-wrap" role="img" aria-label="Loading">
